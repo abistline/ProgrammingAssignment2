@@ -1,0 +1,39 @@
+
+
+
+
+Here is my methodology for running cachematrix.R, and the results of using it to solve and cache a 4x4 invertible matrix
+
+- Austin
+
+
+
+
+
+> rm(list = ls())
+> source("ProgrammingAssignment2/cachematrix.R")
+> my_matrix <- makeCacheMatrix(matrix(1:5, 4, 4))
+> my_matrix$get()
+     [,1] [,2] [,3] [,4]
+[1,]    1    5    4    3
+[2,]    2    1    5    4
+[3,]    3    2    1    5
+[4,]    4    3    2    1
+Warning message:
+In matrix(1:5, 4, 4) :
+  data length [5] is not a sub-multiple or multiple of the number of rows [4]
+> my_matrix$getinverse()
+NULL
+> cacheSolve(my_matrix)
+            [,1]        [,2]        [,3]        [,4]
+[1,] -0.17142857  0.02857143  0.02857143  0.25714286
+[2,]  0.21428571 -0.18571429  0.01428571  0.02857143
+[3,]  0.01428571  0.21428571 -0.18571429  0.02857143
+[4,]  0.01428571  0.01428571  0.21428571 -0.17142857
+> cacheSolve(my_matrix)
+getting cached data
+            [,1]        [,2]        [,3]        [,4]
+[1,] -0.17142857  0.02857143  0.02857143  0.25714286
+[2,]  0.21428571 -0.18571429  0.01428571  0.02857143
+[3,]  0.01428571  0.21428571 -0.18571429  0.02857143
+[4,]  0.01428571  0.01428571  0.21428571 -0.17142857
